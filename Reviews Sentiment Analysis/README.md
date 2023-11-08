@@ -3,6 +3,11 @@
 An online fashion retailer wants to develop a machine learning model that can classify customer reviews into different sentiment categories. The model will take as input a customer review and output a prediction of the review's sentiment, such as positive,
 negative, or neutral. Develop a ML model for aforesaid classification with an example Dataset.
 
+# Solution
+
+[![Language](https://img.shields.io/badge/language-python-blue)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/framework-PyTorch-red)](https://pytorch.org/)
+
 ## Links
 
 - The dataset has been taken from https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews/data

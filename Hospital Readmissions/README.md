@@ -3,6 +3,11 @@
 A hospital has a large dataset of patient records, including information on demographics, medical history, diagnoses, treatments, and outcomes. The hospital wants to use this data to develop a machine learning model that can predict the risk of readmission for patients
 after they are discharged from the hospital. Develop a ML solution for the aforesaid prediction with an example Dataset.
 
+# Solution
+
+[![Language](https://img.shields.io/badge/language-python-blue)](https://www.python.org/)
+[![Framework](https://img.shields.io/badge/framework-TensorFlow-yellow)](https://www.tensorflow.org/)
+
 ## Links
 
 - The dataset has been taken from https://www.kaggle.com/datasets/dansbecker/hospital-readmissions/data
