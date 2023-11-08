@@ -1,11 +1,13 @@
-# Scenario 2
+# Scenario 3
 
 A hospital has a large dataset of patient records, including information on demographics, medical history, diagnoses, treatments, and outcomes. The hospital wants to use this data to develop a machine learning model that can predict the risk of readmission for patients
 after they are discharged from the hospital. Develop a ML solution for the aforesaid prediction with an example Dataset.
 
 ## Links
 
-The ipynb file can be found [here][./]
+- The Google Colab Notebook can be found [here](https://colab.research.google.com/drive/1F9qzOvG-hkCwBX519Sv8gbGN362BLjRi?usp=sharing)
+- The ipynb file can be found [here](./Review_Sentiment_analysis.ipynb)
+- The pdf for the same notebook can be found [here](./review-sentiment-analysis.pdf)
 
 
 ## Dataset Description
@@ -89,7 +91,6 @@ Due to time constraints, the model has been trained on a *very small subset* of 
 
 ## Future Scope
 
-We can do the following to scale up the model
-1. We could use the entire dataset to get better results.
-2. We could increase max_length of the tokenizer to get longer and more expressive encodings
-3. We could train the model for a lot more epochs
+We can do the following :
+1. We could explore the dataset to a greater extent to perform proper Feature Engineering to create a better dataset for training
+2. We could train the model for a greater number of epochs
