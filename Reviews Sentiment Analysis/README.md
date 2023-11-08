@@ -6,7 +6,7 @@ negative, or neutral. Develop a ML model for aforesaid classification with an ex
 ## Links
 
 - The Google Colab Notebook can be found [here](https://colab.research.google.com/drive/1F9qzOvG-hkCwBX519Sv8gbGN362BLjRi?usp=sharing)
-- The ipynb file can be found [here](./Review_Sentiment_analysis.ipynb)
+- The ipynb file can be found [here](./Review_Sentiment_Analysis.ipynb)
 - The pdf for the same notebook can be found [here](./review-sentiment-analysis.pdf)
 
 ## Dataset Description
