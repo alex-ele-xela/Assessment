@@ -5,6 +5,8 @@ negative, or neutral. Develop a ML model for aforesaid classification with an ex
 
 ## Links
 
+- The dataset has been taken from https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews/data
+- The dataset is also locally available [here](./data/reviews.csv)
 - The Google Colab Notebook can be found [here](https://colab.research.google.com/drive/1F9qzOvG-hkCwBX519Sv8gbGN362BLjRi?usp=sharing)
 - The ipynb file can be found [here](./Review_Sentiment_Analysis.ipynb)
 - The pdf for the same notebook can be found [here](./review-sentiment-analysis.pdf)
@@ -14,8 +16,6 @@ negative, or neutral. Develop a ML model for aforesaid classification with an ex
 The dataset has been taken from https://www.kaggle.com/datasets/nicapotato/womens-ecommerce-clothing-reviews/data
 
 For our sentiment analysis task, we will be using a larger example dataset that contains customer reviews and their associated ratings. The dataset includes a diverse set of customer reviews, covering both positive and negative sentiments, allowing us to train and evaluate our sentiment analysis model effectively. Each review is labeled with one of the following sentiments: 'very positive,' 'positive,' 'negative,' 'very negative,' or 'neutral.'
-
-The dataset structure looks like this:
   
 ## Dataset Visualization
 
@@ -71,9 +71,9 @@ Additionally, the model has been trained only for **3 Epochs** here due to time 
 
 ## Model Evaluation
 
-After the model is trained, it is evaluated on a separate testing dataset to assess its performance. This evaluation includes metrics such as accuracy and a classification report. The classification report provides detailed information on precision, recall, and F1-score for each sentiment category, allowing us to understand the model's strengths and weaknesses.
+After the model is trained, it is evaluated on a separate testing dataset to assess its performance. This evaluation includes metrics such as accuracy, a classification report, and a confusion matrix. The classification report provides detailed information on precision, recall, and F1-score for each sentiment category, allowing us to understand the model's strengths and weaknesses.
 
-For the training and evaluation visualizations, refer to the placeholders below:
+For the training and evaluation visualizations, refer to the images below:
 
 - Training Loss Over Batches
     - ![Training Loss Plot](./imgs/train_loss.png)
@@ -91,6 +91,6 @@ Due to time constraints, the model has been trained on a *very small subset* of 
 ## Future Scope
 
 We can do the following to scale up the model
-1. We could use the entire dataset to get better results.
-2. We could increase max_length of the tokenizer to get longer and more expressive encodings
-3. We could train the model for a lot more epochs
+1. We could **use the entire dataset** to get better results.
+2. We could **increase max_length of the tokenizer** to get longer and more expressive encodings
+3. We could train the model for a lot **more epochs**

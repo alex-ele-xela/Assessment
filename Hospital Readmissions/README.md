@@ -5,79 +5,49 @@ after they are discharged from the hospital. Develop a ML solution for the afore
 
 ## Links
 
-- The Google Colab Notebook can be found [here](https://colab.research.google.com/drive/1F9qzOvG-hkCwBX519Sv8gbGN362BLjRi?usp=sharing)
-- The ipynb file can be found [here](./Review_Sentiment_analysis.ipynb)
-- The pdf for the same notebook can be found [here](./review-sentiment-analysis.pdf)
+- The dataset has been taken from https://www.kaggle.com/datasets/dansbecker/hospital-readmissions/data
+- The dataset is also locally available [here](./data/readmissions.csv)
+- The Google Colab Notebook can be found [here](https://colab.research.google.com/drive/1xKcC7aTxdMSIRZde64EJ-vkR9HJXXmpA?usp=sharing)
+- The ipynb file can be found [here](./Hospital_Readmission_Prediction.ipynb)
+- The pdf for the same notebook can be found [here](./hospital-readmission-prediction.pdf)
 
 
 ## Dataset Description
 
-The dataset has been taken from https://www.kaggle.com/datasets/dansbecker/hospital-readmissions/data
-
-For our sentiment analysis task, we will be using a larger example dataset that contains customer reviews and their associated ratings. The dataset includes a diverse set of customer reviews, covering both positive and negative sentiments, allowing us to train and evaluate our sentiment analysis model effectively. Each review is labeled with one of the following sentiments: 'very positive,' 'positive,' 'negative,' 'very negative,' or 'neutral.'
-
-The dataset structure looks like this:
+We have a comprehensive hospital dataset which contains records of the patients' personal information, treatments, diagnoses, payment details, test results and readmission.
+This is perfect for our use case.
   
-## Dataset Visualization
+## Dataset Exploration
 
-### Distribution of Sentiments
+The dataset mostly consists of dummy variables for various conditions. Additionally, it consists of *64 columns* excluding the readmitted criteria column.
 
-Visualizing the distribution of sentiments in the dataset is essential for understanding the balance of different sentiment categories. The bar chart below illustrates the distribution of sentiments in our dataset. This helps us ensure that our model will have sufficient data for each sentiment category to learn from.
+We will visualize this by plotting the correlation matrix of the dataset
+![Correlation Matrix](./imgs/corr.png)
+We can see that most of the columns are not highly correlated, so we will go forward with using all the columns for now
 
-![Sentiment Distribution](./imgs/sentiment-dist.png)
+## Dataset Preparation
 
-### Word Clouds
+We will divide the dataset into the features and target.
 
-Word clouds provide a visual representation of the most common words used in the reviews for positive and negative sentiments. These word clouds can give us insights into the language used by customers when expressing their opinions.
+After that we will visualize the features using PCA.
+![PCA Visualization](./imgs/PCAvis.png)
 
-#### Word Cloud for Very Positive Sentiments
-
-The word cloud for positive sentiments visually highlights the words and phrases that frequently appear in very positive reviews.
-
-![Very Positive Sentiment Word Cloud](./imgs/very_pos.png)
-
-#### Word Cloud for Positive Sentiments
-
-The word cloud for positive sentiments visually highlights the words and phrases that frequently appear in positive reviews.
-
-![Positive Sentiment Word Cloud](./imgs/pos.png)
-
-#### Word Cloud for Negative Sentiments
-
-The word cloud for negative sentiments shows the words and expressions commonly found in negative reviews, helping us identify patterns and key negative sentiments.
-
-![Negative Sentiment Word Cloud](./imgs/neg.png)
-
-#### Word Cloud for Very Negative Sentiments
-
-The word cloud for positive sentiments visually highlights the words and phrases that frequently appear in very negative reviews.
-
-![Very Negative Sentiment Word Cloud](./imgs/very_neg.png)
-
-#### Word Cloud for Neutral Sentiments
-
-The word cloud for positive sentiments visually highlights the words and phrases that frequently appear in neutral reviews.
-
-![Neutral Sentiment Word Cloud](./imgs/neutral.png)
+Our data is ready to be fed into the model
 
 ## Model Training
 
-Training a sentiment analysis model involves several crucial steps. It begins with tokenization, where text data is converted into numerical representations. The dataset is divided into batches to make the training process efficient, and optimization techniques are applied to minimize the loss function. During the training process, the loss is tracked to monitor how well the model is learning.
+Our model consists of an input layer, 2 hidden layers and an output layer. It uses the *Adam Optimizer* and *Binary Cross Entropy loss*.
 
-Please note that only a **small subset** of the data has currently been used due to computational restrictions. However, this can easily be changed by adjusting the values in the notebook.
-
-Additionally, the model has been trained only for **3 Epochs** here due to time constraints. However, this could be increased to a much greater amount in a real world scenario.
-
-![Training Progress](./imgs/training.png)
+We directly feed the training features and targets into the model and train it.
 
 ## Model Evaluation
 
-After the model is trained, it is evaluated on a separate testing dataset to assess its performance. This evaluation includes metrics such as accuracy and a classification report. The classification report provides detailed information on precision, recall, and F1-score for each sentiment category, allowing us to understand the model's strengths and weaknesses.
+After the model is trained, it is evaluated on a separate testing dataset to assess its performance. This evaluation includes metrics such as accuracy, a classification report, and a confusion matrix. The classification report provides detailed information on precision, recall, and F1-score for each sentiment category, allowing us to understand the model's strengths and weaknesses.
 
-For the training and evaluation visualizations, refer to the placeholders below:
+For the training and evaluation visualizations, refer to the images below:
 
-- Training Loss Over Batches
-    - ![Training Loss Plot](./imgs/train_loss.png)
+- Training and Val Loss Over Batches
+    - ![Training Loss Plot](./imgs/loss.png)
 
 - Accuracy, Classification Report and Confusion Matrix
     - ![Accuracy and Classification Report](./imgs/eval.png)
@@ -85,12 +55,12 @@ For the training and evaluation visualizations, refer to the placeholders below:
 
 These visualizations and evaluation metrics help us gauge how well the model can classify customer reviews into the appropriate sentiment categories.
 
-### Important note about model
+### Important note about the model
 
-Due to time constraints, the model has been trained on a *very small subset* of the dataset, and also has been trained for *very few epochs* due to which the model is not very good. This can easily be changed by tweaking the hyperparameters.
+We can see that our model is still not very accurate andn should not be put into production. This can be tackled through various methods which are mentioned in the below future scope.
 
 ## Future Scope
 
 We can do the following :
-1. We could explore the dataset to a greater extent to perform proper Feature Engineering to create a better dataset for training
-2. We could train the model for a greater number of epochs
+1. We could explore the dataset to a greater extent to perform proper **Feature Engineering** to create a better dataset for training
+2. We could train the model for a **greater number of epochs**
